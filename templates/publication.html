@@ -87,7 +87,7 @@
                                         <a href="#.">Newsletter</a>
                                         <ul>
                                             <li><a href="{% url 'blog-page' %}">Blog List</a></li>
-                                            <li><a href=#>Publication</a></li>
+                                            <li><a href="{% url 'blog-detail' %}">Publication</a></li>
                                         </ul>
                                     </li>
                                     <li class="mil-has-children">
@@ -294,19 +294,19 @@
                         <div class="row">
                             <div class="col-lg-6">
 
-                                <a href=# class="mil-blog-card mil-mb-60">
+                                <a href="{% url 'blog-detail' %}" class="mil-blog-card mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
-                                        <img src="img/blog/8.jpg" alt="cover">
+                                        <img src="{{blog.image.url}}" alt="cover">
                                     </div>
                                     <div class="mil-post-descr">
                                         <div class="mil-labels mil-up mil-mb-30">
                                             <div class="mil-label mil-upper mil-accent">TECHNOLOGY</div>
                                             <div class="mil-label mil-upper">may 24 2023</div>
                                         </div>
-                                        <h4 class="mil-up mil-mb-30">How to Become a Graphic Designer in 10 Simple Steps</h4>
-                                        <p class="mil-post-text mil-up mil-mb-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus nisi. Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid, asperiores impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam totam ea voluptas quibusdam repudiandae id ut at iure! Totam, a!</p>
+                                        <h4 class="mil-up mil-mb-30">{{blog.title}}</h4>
+                                        <p class="mil-post-text mil-up mil-mb-30">{{blog.description | truncatewords:10 }}</p>
                                         <div class="mil-link mil-dark mil-arrow-place mil-up">
-                                            <span>Read more</span>
+                                            <span><span><a href="{% url 'blog-page' %}">Back</a></span></span>
                                         </div>
                                     </div>
                                 </a>
@@ -314,7 +314,7 @@
                             </div>
                             <div class="col-lg-6">
 
-                                <a href=# class="mil-blog-card mil-mb-60">
+                                <a href="{% url 'blog-detail' %}" class="mil-blog-card mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
                                         <img src="img/blog/1.jpg" alt="cover">
                                     </div>
